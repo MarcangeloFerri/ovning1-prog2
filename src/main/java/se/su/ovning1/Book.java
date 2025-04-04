@@ -1,9 +1,9 @@
 package se.su.ovning1;
 
 public class Book extends Item implements PriceableWithVAT6 {
-    private String author;
-    private double price;
-    private boolean bound;
+    private final String author;
+    private final double price;
+    private final boolean bound;
 
     public Book(String name, String author, double price, boolean bound){
         super(name);
