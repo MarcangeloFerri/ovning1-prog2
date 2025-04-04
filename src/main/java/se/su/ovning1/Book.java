@@ -1,5 +1,5 @@
 package se.su.ovning1;
-//hej
+//hejdå
 public class Book extends Item implements PriceableWithVAT6 {
     private String author;
     private double price;
