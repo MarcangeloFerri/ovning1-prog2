@@ -26,7 +26,10 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
 
     @Override
     public double getPrice() {
-        return price;
+       double priceReductionFactror = condition / 10.0;
+       double reducedPrice = price * priceReductionFactror;
+
+       return Math.max(10, reducedPrice);
     }
 
     public int getYear() {
@@ -39,6 +42,6 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
     }
 
     protected double getOriginalPrice(){
-        return 0;
+        return price;
     }
 }
