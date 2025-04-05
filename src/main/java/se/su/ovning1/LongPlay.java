@@ -6,12 +6,17 @@ public class LongPlay extends Recording{
     }
 
     @Override
-    public double getVAT() {
-        return 25;
+    public double getPrice() {
+        return super.getPrice() +(90.0) * (0.1) + (2025 - 2020) * (5.0);
     }
 
     @Override
-    public double PriceWithVAT() {
-        return getPrice() *(1.+getVAT());
+    public double getPriceWithVAT() {
+        return getPrice() *(1+getVAT());
+    }
+
+    @Override
+    public String getType() {
+        return "LP";
     }
 }

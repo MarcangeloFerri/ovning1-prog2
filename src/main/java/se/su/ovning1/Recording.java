@@ -12,12 +12,10 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
         this.condition = condition;
         this.price = price;
     }
+    public abstract String getType();
 
     public String getArtist() {
         return artist;
-    }
-    public String getType(){
-        return "Record";
     }
 
     public int getCondition() {
@@ -40,8 +38,14 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
     public String toString() {
         return super.toString();
     }
+    @Override
+    public double getVAT() {
+        return 0.25;
+    }
 
     protected double getOriginalPrice(){
         return price;
     }
+
+
 }

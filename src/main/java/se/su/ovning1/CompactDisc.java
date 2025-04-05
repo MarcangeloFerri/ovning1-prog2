@@ -11,13 +11,9 @@ public class CompactDisc extends Recording {
         return "CD";
     }
 
-    @Override
-    public double getVAT() {
-        return getVAT();
-    }
 
     @Override
-    public double PriceWithVAT() {
+    public double getPriceWithVAT() {
         return getPrice()+getVAT();
     }
 }

@@ -31,11 +31,11 @@ public class Book extends Item implements PriceableWithVAT6 {
 
     @Override
     public double getVAT() {
-        return 0;
+        return 0.06;
     }
 
     @Override
-    public double PriceWithVAT() {
+    public double getPriceWithVAT() {
         return 0;
     }
 
