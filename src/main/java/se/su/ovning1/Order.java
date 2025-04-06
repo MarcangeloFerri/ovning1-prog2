@@ -1,16 +1,13 @@
 package se.su.ovning1;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Order {
     private final long orderNumber;
     private static long counter = 1;
-     //private final ArrayList<Item> items;
+    private final Item[] items;
 
-    public Order(List<Item> items) {
-        this.orderNumber = //orderNumber;
+    public Order(Item[]items) {
+        this.orderNumber = counter++;
         this.counter = counter;
-       // this.items = items;
+        this.items = new Item[items.length];
     }
 }

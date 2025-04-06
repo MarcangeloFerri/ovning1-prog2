@@ -7,7 +7,12 @@ public abstract class Item implements Priceable {
         this.name = name;
 
     }
-    public String getName(){
-        return this.name;
+
+    public String getName() {
+        return name;
     }
 }
+
+
+
+
