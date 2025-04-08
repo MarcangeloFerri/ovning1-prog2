@@ -2,7 +2,7 @@ package se.su.ovning1;
 public abstract class Recording extends Item implements PriceableWithVAT25 {
     private final String artist;
     private final int year;
-    int condition;
+    private int condition;
     private final double price;
 
     protected Recording(String name, String artist, int year, int condition, double price){
