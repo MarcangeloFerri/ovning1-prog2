@@ -11,13 +11,9 @@ public class Book extends Item implements PriceableWithVAT6 {
         this.price = price;
         this.bound = bound;
     }
-    @Override
-    public String getName() {
-        return super.getName();
-    }
-    //get type samma som get name?
-    public String getType(){
-        return "Book";
+
+    protected String getType(){
+        return "Book: ";
     }
 
     @Override
@@ -29,18 +25,16 @@ public class Book extends Item implements PriceableWithVAT6 {
         }
     }
 
-    @Override
-    public double getVAT() {
-        return 0.06;
-    }
-
-    @Override
-    public double getPriceWithVAT() {
-        return 0;
-    }
-
     public String toString(){
-        return getName()+" "+author+" "+price+" "+bound;
+        return getType() +"{"+
+                "name="+getName()+", "
+                +"author="+author+", "
+                +"price="+getPrice()+", "
+                +"bound"+bound+", "
+                +"price+VAT="+getPriceWithVAT() +"}";
     }
 }
+
+
+
 

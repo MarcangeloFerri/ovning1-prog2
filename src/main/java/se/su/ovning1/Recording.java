@@ -24,10 +24,8 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
 
     @Override
     public double getPrice() {
-       double priceReductionFactror = condition / 10.0;
-       double reducedPrice = price * priceReductionFactror;
-
-       return Math.max(10, reducedPrice);
+       double reducedPrice = price * (condition/10.0);
+       return Math.max(10.0, reducedPrice);
     }
 
     public int getYear() {
@@ -36,16 +34,16 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
 
     @Override
     public String toString() {
-        return super.toString();
-    }
-    @Override
-    public double getVAT() {
-        return 0.25;
+        return getType() + "{" + this.getName() +", "+
+                "artist= " + artist+", "+
+                "year= " + year+", " +
+                "condition="+ condition+", "+
+                "original price="+getOriginalPrice()+", "+
+                "price="+getPrice()+", "+
+                "price + vat="+getPriceWithVAT();
     }
 
     protected double getOriginalPrice(){
         return price;
     }
-
-
 }

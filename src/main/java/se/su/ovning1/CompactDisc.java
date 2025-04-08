@@ -8,12 +8,11 @@ public class CompactDisc extends Recording {
     }
     @Override
     public String getType(){
-        return "CD";
+        return "CD: ";
     }
-
 
     @Override
     public double getPriceWithVAT() {
-        return getPrice()+getVAT();
+        return getPrice()*1.25;
     }
 }

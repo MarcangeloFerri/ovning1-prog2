@@ -7,16 +7,21 @@ public class LongPlay extends Recording{
 
     @Override
     public double getPrice() {
-        return super.getPrice() +(90.0) * (0.1) + (2025 - 2020) * (5.0);
+        double basePrice = super.getPrice();
+        int yearNow = java.time.Year.now().getValue();
+        int numOfYears = yearNow-getYear();
+        double timeValueInc = numOfYears * 5.0;
+
+        return basePrice + timeValueInc;
     }
 
     @Override
     public double getPriceWithVAT() {
-        return getPrice() *(1+getVAT());
+        return getPrice() *(1.+getVAT());
     }
 
     @Override
     public String getType() {
-        return "LP";
+        return "LP: ";
     }
 }
